@@ -251,19 +251,6 @@ Generated incidents include:
 
 ---
 
-# Future Improvements
-
-- UEBA integration
-- Automated response playbooks
-- Microsoft Defender integration
-- Email telemetry ingestion
-- Threat intelligence feeds
-- Custom dashboards/workbooks
-- Malware simulation scenarios
-- Sigma rule conversion
-
----
-
 # MITRE ATT&CK Techniques Covered
 
 | Technique | ID |
