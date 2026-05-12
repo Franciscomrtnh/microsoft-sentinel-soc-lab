@@ -26,7 +26,7 @@ SecurityEvent
 | summarize FailedAttempts = count() by Account
 | where FailedAttempts >= 5
 ```
-```
+
 
 ---
 
