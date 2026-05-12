@@ -4,6 +4,41 @@ A cloud-based Security Operations Center (SOC) lab built using Microsoft Sentine
 
 ---
 
+## 🏗️ Architecture Diagram
+
+The following diagram illustrates the complete telemetry and detection pipeline used in this Microsoft Sentinel SOC Lab.
+
+It shows how telemetry flows from Windows endpoints through Sysmon and Azure Monitor Agent (AMA), into Log Analytics and Microsoft Sentinel, where custom analytics rules generate alerts, incidents, and investigation workflows.
+
+![Microsoft Sentinel SOC Lab Architecture](architecture/lab-architecture.png)
+
+### Architecture Flow
+
+1. **Data Sources**
+   - WS01 Windows 10 Workstation
+   - DC01 Windows Server 2022 Domain Controller
+
+2. **Data Collection**
+   - Sysmon event generation
+   - Azure Monitor Agent (AMA)
+
+3. **Data Ingestion**
+   - Data Collection Rules (DCR)
+   - Log Analytics Workspace
+
+4. **Microsoft Sentinel**
+   - Custom Analytics Rules
+   - Threat Detection
+   - Incident Correlation
+
+5. **Detection & Response**
+   - Alerts
+   - Incidents
+   - Investigations
+   - Threat Hunting
+
+---
+
 # Lab Overview
 
 This project demonstrates:
