@@ -344,6 +344,16 @@ Generated incidents include:
 
 ![Incidents Dashboard](screenshots/incidents-dashboard.png)
 
+---
+
+# Lessons Learned
+
+- Improved understanding of Microsoft Sentinel architecture
+- Developed hands-on experience with KQL and detection engineering
+- Learned how AMA and DCR interact for telemetry ingestion
+- Practiced MITRE ATT&CK mapping and incident investigation workflows
+- Gained experience analyzing Sysmon telemetry and Windows Security Events
+
 # Author
 
 Francisco M.
