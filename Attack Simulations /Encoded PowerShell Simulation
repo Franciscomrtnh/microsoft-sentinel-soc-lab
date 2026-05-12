@@ -1,21 +1,26 @@
-# Encoded PowerShell Execution Simulation
+# 1. Encoded PowerShell Execution
 
 ## Objective
 
-Simulate obfuscated PowerShell execution commonly used by attackers for malware delivery and defense evasion.
+Simulate obfuscated PowerShell execution commonly used by attackers to evade detection, execute malicious scripts, or deliver payloads.
 
-## Command Executed
+## Attack Technique
 
-```powershell
-powershell.exe -EncodedCommand SQBlAHgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkA
-```
+Attackers frequently use Base64-encoded PowerShell commands to hide malicious activity from security tools and administrators.
+
+## MITRE ATT&CK
+
+- T1059.001 — PowerShell
+- T1027 — Obfuscated Files or Information
+
+## Simulation Performed
+
+Executed PowerShell using the `-EncodedCommand` and `-enc` parameters to trigger Sysmon process creation telemetry.
+
+## Detection Result
+
+Microsoft Sentinel generated a High severity incident based on Sysmon Event ID 1 process creation logs.
 
 ## Detection Triggered
 
 - Encoded PowerShell Execution
-- MITRE ATT&CK: T1059.001
-- MITRE ATT&CK: T1027
-
-## Result
-
-Microsoft Sentinel successfully generated a High severity incident based on Sysmon Event ID 1 process creation telemetry.
