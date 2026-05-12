@@ -20,13 +20,7 @@ It shows how telemetry flows from Windows endpoints through Sysmon and Azure Mon
 
 ![Microsoft Sentinel SOC Lab Architecture](architecture/lab-architecture.png)
 
-### Architecture Flow
 
-1. Data Sources
-2. Data Collection
-3. Data Ingestion
-4. Microsoft Sentinel
-5. Detection & Response
 ---
 
 # Lab Overview
