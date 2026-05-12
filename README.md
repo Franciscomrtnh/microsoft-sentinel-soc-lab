@@ -3,6 +3,14 @@
 A cloud-based Security Operations Center (SOC) lab built using Microsoft Sentinel, Azure Monitor Agent (AMA), Sysmon, and Windows event telemetry to simulate real-world detection engineering, threat hunting, and incident investigation workflows.
 
 ---
+## Key Features
+
+- Microsoft Sentinel SIEM deployment
+- Sysmon + AMA telemetry ingestion
+- Custom KQL analytics rules
+- MITRE ATT&CK mapped detections
+- Threat hunting workflows
+- Incident investigation simulations
 
 ## 🏗️ Architecture Diagram
 
@@ -14,29 +22,11 @@ It shows how telemetry flows from Windows endpoints through Sysmon and Azure Mon
 
 ### Architecture Flow
 
-1. **Data Sources**
-   - WS01 Windows 10 Workstation
-   - DC01 Windows Server 2022 Domain Controller
-
-2. **Data Collection**
-   - Sysmon event generation
-   - Azure Monitor Agent (AMA)
-
-3. **Data Ingestion**
-   - Data Collection Rules (DCR)
-   - Log Analytics Workspace
-
-4. **Microsoft Sentinel**
-   - Custom Analytics Rules
-   - Threat Detection
-   - Incident Correlation
-
-5. **Detection & Response**
-   - Alerts
-   - Incidents
-   - Investigations
-   - Threat Hunting
-
+1. Data Sources
+2. Data Collection
+3. Data Ingestion
+4. Microsoft Sentinel
+5. Detection & Response
 ---
 
 # Lab Overview
@@ -87,12 +77,7 @@ The lab collects and analyzes:
 
 # Data Collection Pipeline
 
-1. Sysmon installed on Windows endpoints
-2. Azure Monitor Agent deployed
-3. Data Collection Rules configured
-4. Events forwarded to Log Analytics Workspace
-5. Microsoft Sentinel connected to workspace
-6. Analytics rules generate incidents automatically
+Telemetry from Sysmon and Windows Security Events is collected through Azure Monitor Agent (AMA), filtered using Data Collection Rules (DCR), and ingested into Log Analytics Workspace for analysis within Microsoft Sentinel.
 
 ---
 
@@ -100,13 +85,12 @@ The lab collects and analyzes:
 
 ## Configured Components
 
-- Windows Security Events via AMA connector
+- Windows Security Events via AMA
+- Sysmon Telemetry Collection
 - Data Collection Rules (DCR)
-- Log Analytics Workspace
-- Scheduled Analytics Rules
-- Incident Creation Rules
+- Custom Analytics Rules
+- Incident Generation
 - MITRE ATT&CK Mapping
-- Advanced Hunting Queries
 
 ---
 
@@ -137,17 +121,6 @@ Detects PowerShell executions using encoded commands commonly associated with ob
 
 ### Severity
 High
-
-### Detection Logic
-
-```kusto
-Event
-| where Source == "Microsoft-Windows-Sysmon"
-| where EventID == 1
-| where RenderedDescription has "-EncodedCommand"
-   or RenderedDescription has "-enc"
-| project TimeGenerated, Computer, RenderedDescription
-```
 
 ---
 
