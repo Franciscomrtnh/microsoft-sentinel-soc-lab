@@ -318,7 +318,7 @@ Generated incidents include:
 
 ## Windows Security Events via AMA
 
-![AMA Connector](screenshots/Data Connectors configuration.png)
+![AMA Connector](screenshots/![AMA Connector](screenshots/data-connectors-configuration.png))
 
 ---
 
