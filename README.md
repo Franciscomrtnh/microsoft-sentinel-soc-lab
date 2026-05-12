@@ -262,6 +262,85 @@ Generated incidents include:
 | OS Credential Dumping | T1003 |
 
 ---
+# Screenshots
+
+---
+
+## SOC Dashboard
+
+![SOC Dashboard](screenshots/soc-dashboard.png)
+
+---
+
+## Analytics Rules Overview
+
+![Analytics Rules](screenshots/analytics-rules-overview.png)
+
+---
+
+## Built-in Analytics Rules
+
+![Built-in Rules](screenshots/builtin-analytics-rules.png)
+
+---
+
+## Advanced Hunting – Encoded PowerShell
+
+![Advanced Hunting](screenshots/advanced-hunting-encoded-powershell.png)
+
+---
+
+## Encoded PowerShell Incident
+
+![Encoded PowerShell Incident](screenshots/encoded-powershell-incident-details.png)
+
+---
+
+## Encoded PowerShell Rule Configuration
+
+![Encoded PowerShell Rule](screenshots/encoded-powershell-rule-config.png)
+
+---
+
+## Excessive Failed Logins Incident
+
+![Failed Logins](screenshots/excessive-failed-logins-incident.png)
+
+---
+
+## Remote Service Creation Incident
+
+![Remote Service Incident](screenshots/remote-service-incident.png)
+
+---
+
+## Windows Security Events via AMA
+
+![AMA Connector](screenshots/Data Connectors configuration.png)
+
+---
+
+## Sysmon DCR Resources
+
+![Sysmon DCR](screenshots/sysmon-dcr-resources.png)
+
+---
+
+## Sysmon Operational Logs
+
+![Sysmon Logs](screenshots/sysmon-operational-logs.png)
+
+---
+
+## Domain Controller DNS Configuration
+
+![Domain Controller](screenshots/domain-controller-dns.png)
+
+---
+
+## Sentinel Incidents Dashboard
+
+![Incidents Dashboard](screenshots/incidents-dashboard.png)
 
 # Author
 
