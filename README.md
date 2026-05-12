@@ -113,3 +113,171 @@ Event
    or RenderedDescription has "-enc"
 | project TimeGenerated, Computer, RenderedDescription
 ```
+
+---
+
+## 3. Remote Service Creation Detection
+
+Detects suspicious service creation activity associated with lateral movement techniques.
+
+### MITRE ATT&CK
+- Lateral Movement
+- T1021 — Remote Services
+
+### Severity
+High
+
+---
+
+## 4. Potential Credential Dumping
+
+Detects suspicious process execution patterns related to credential dumping behavior.
+
+### MITRE ATT&CK
+- Credential Access
+- T1003 — OS Credential Dumping
+
+### Severity
+High
+
+---
+
+## 5. Suspicious PowerShell Execution
+
+Detects suspicious PowerShell usage patterns that may indicate malicious script execution.
+
+### MITRE ATT&CK
+- Execution
+- T1059.001 — PowerShell
+
+### Severity
+Medium
+
+---
+
+# Threat Hunting Queries
+
+## Encoded PowerShell Detection
+
+```kusto
+Event
+| where Source == "Microsoft-Windows-Sysmon"
+| where EventID == 1
+| where RenderedDescription has "-EncodedCommand"
+   or RenderedDescription has "-enc"
+| project TimeGenerated, Computer, RenderedDescription
+```
+
+---
+
+## Failed Login Hunt
+
+```kusto
+SecurityEvent
+| where EventID == 4625
+| summarize FailedAttempts=count() by Account
+| where FailedAttempts >= 5
+```
+
+---
+
+## Remote Service Creation Hunt
+
+```kusto
+Event
+| where Source == "Microsoft-Windows-Sysmon"
+| where EventID == 1
+| where RenderedDescription has "sc.exe"
+| project TimeGenerated, Computer, RenderedDescription
+```
+
+---
+
+# Incident Investigation
+
+The lab demonstrates:
+
+- Alert triage
+- Incident investigation
+- MITRE ATT&CK categorization
+- Query-driven analysis
+- Timeline correlation
+- Endpoint telemetry review
+
+Generated incidents include:
+
+- Encoded PowerShell Execution
+- Excessive Failed Logins
+- Remote Service Creation Detection
+- Potential Credential Dumping
+
+---
+
+# Screenshots Included
+
+- Microsoft Sentinel Analytics Rules
+- Advanced Hunting Queries
+- Incident Investigation Panels
+- AMA Connector Configuration
+- Data Collection Rules (DCR)
+- Sysmon Operational Logs
+- Sentinel Incident Dashboard
+- Azure Resource Configuration
+
+---
+
+# Skills Demonstrated
+
+## SIEM Engineering
+- Microsoft Sentinel
+- Log Analytics
+- Analytics Rule Creation
+- Incident Management
+
+## Detection Engineering
+- KQL Query Development
+- Threat Detection Logic
+- MITRE ATT&CK Mapping
+
+## Endpoint Monitoring
+- Sysmon Configuration
+- Windows Event Analysis
+- PowerShell Monitoring
+
+## Threat Hunting
+- Log Correlation
+- IOC Analysis
+- Behavioral Detection
+
+---
+
+# Future Improvements
+
+- UEBA integration
+- Automated response playbooks
+- Microsoft Defender integration
+- Email telemetry ingestion
+- Threat intelligence feeds
+- Custom dashboards/workbooks
+- Malware simulation scenarios
+- Sigma rule conversion
+
+---
+
+# MITRE ATT&CK Techniques Covered
+
+| Technique | ID |
+|---|---|
+| PowerShell | T1059.001 |
+| Obfuscated Files or Information | T1027 |
+| Brute Force | T1110 |
+| Remote Services | T1021 |
+| OS Credential Dumping | T1003 |
+
+---
+
+# Author
+
+Francisco M.
+
+Security Operations • Threat Hunting • Detection Engineering • Microsoft Sentinel
